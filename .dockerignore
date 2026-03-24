@@ -1,0 +1,11 @@
+.git/
+.claude/
+node_modules/
+dist/
+charts/
+integration-tests/
+coverage/
+*.md
+*.tgz
+.env
+.env.*

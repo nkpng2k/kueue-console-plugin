@@ -8,3 +8,5 @@ coverage/
 integration-tests/screenshots/
 integration-tests/videos/
 .claude/
+.env
+.env.*
