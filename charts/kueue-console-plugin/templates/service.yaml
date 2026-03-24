@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "kueue-console-plugin.name" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "kueue-console-plugin.labels" . | nindent 4 }}
+  annotations:
+    {{- if not .Values.plugin.certificateSecretName }}
+    service.alpha.openshift.io/serving-cert-secret-name: {{ include "kueue-console-plugin.certificateSecretName" . }}
+    {{- end }}
+spec:
+  type: ClusterIP
+  sessionAffinity: None
+  ports:
+    - name: {{ .Values.plugin.port }}-tcp
+      port: {{ .Values.plugin.port }}
+      protocol: TCP
+      targetPort: {{ .Values.plugin.port }}
+  selector:
+    {{- include "kueue-console-plugin.selectorLabels" . | nindent 4 }}

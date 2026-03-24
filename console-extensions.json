@@ -1,0 +1,172 @@
+[
+  {
+    "type": "console.navigation/section",
+    "properties": {
+      "id": "kueue",
+      "name": "%plugin__kueue-console-plugin~Workload Management%",
+      "insertAfter": "workloads"
+    }
+  },
+  {
+    "type": "console.navigation/href",
+    "properties": {
+      "id": "kueue-overview",
+      "name": "%plugin__kueue-console-plugin~Overview%",
+      "href": "/kueue",
+      "perspective": "admin",
+      "section": "kueue"
+    }
+  },
+  {
+    "type": "console.navigation/resource-cluster",
+    "properties": {
+      "id": "clusterqueues",
+      "name": "%plugin__kueue-console-plugin~Cluster Queues%",
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "ClusterQueue"
+      },
+      "perspective": "admin",
+      "section": "kueue"
+    }
+  },
+  {
+    "type": "console.navigation/resource-ns",
+    "properties": {
+      "id": "localqueues",
+      "name": "%plugin__kueue-console-plugin~Local Queues%",
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "LocalQueue"
+      },
+      "perspective": "admin",
+      "section": "kueue"
+    }
+  },
+  {
+    "type": "console.navigation/resource-ns",
+    "properties": {
+      "id": "workloads-kueue",
+      "name": "%plugin__kueue-console-plugin~Workloads%",
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "Workload"
+      },
+      "perspective": "admin",
+      "section": "kueue"
+    }
+  },
+  {
+    "type": "console.navigation/resource-cluster",
+    "properties": {
+      "id": "resourceflavors",
+      "name": "%plugin__kueue-console-plugin~Resource Flavors%",
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "ResourceFlavor"
+      },
+      "perspective": "admin",
+      "section": "kueue"
+    }
+  },
+  {
+    "type": "console.page/route",
+    "properties": {
+      "exact": true,
+      "path": "/kueue",
+      "component": { "$codeRef": "OverviewDashboard" }
+    }
+  },
+  {
+    "type": "console.page/resource/list",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "ClusterQueue"
+      },
+      "component": { "$codeRef": "ClusterQueueListPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/details",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "ClusterQueue"
+      },
+      "component": { "$codeRef": "ClusterQueueDetailsPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/list",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "LocalQueue"
+      },
+      "component": { "$codeRef": "LocalQueueListPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/details",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "LocalQueue"
+      },
+      "component": { "$codeRef": "LocalQueueDetailsPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/list",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "Workload"
+      },
+      "component": { "$codeRef": "WorkloadListPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/details",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "Workload"
+      },
+      "component": { "$codeRef": "WorkloadDetailsPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/list",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "ResourceFlavor"
+      },
+      "component": { "$codeRef": "ResourceFlavorListPage" }
+    }
+  },
+  {
+    "type": "console.page/resource/details",
+    "properties": {
+      "model": {
+        "group": "kueue.x-k8s.io",
+        "version": "v1beta1",
+        "kind": "ResourceFlavor"
+      },
+      "component": { "$codeRef": "ResourceFlavorDetailsPage" }
+    }
+  }
+]

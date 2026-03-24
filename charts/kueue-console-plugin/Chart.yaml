@@ -1,0 +1,6 @@
+apiVersion: v2
+name: kueue-console-plugin
+description: OpenShift Console plugin for Red Hat Build of Kueue
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

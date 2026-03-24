@@ -1,0 +1,24 @@
+extends:
+  - stylelint-config-standard
+rules:
+  color-named: never
+  color-no-hex: true
+  function-disallowed-list:
+    - rgb
+    - rgba
+    - hsl
+    - hsla
+    - oklch
+    - hwb
+    - lab
+    - lch
+  custom-property-pattern: null
+  selector-class-pattern: null
+  selector-disallowed-list:
+    - "*"
+    - /\.(pf|co)-/
+  selector-max-type:
+    - 0
+    - ignore:
+        - compounded
+        - descendant
